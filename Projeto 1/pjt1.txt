@@ -1,0 +1,60 @@
+classe Ponto:
+    construtor(x,y):
+        x=x
+        y=y
+    dist_origem():
+        return sqrt(x^2+y^2)
+
+classe Linha:
+    construtor(x,y):
+        p1=Ponto(x[0],y[0])
+        p2=Ponto(x[1],y[1])
+        comprimento=sqrt((p1.x-p2.x)^2+(p1.y-p2.y)^2)
+
+classe Circulo(Ponto):
+    construtor(x,y,raio):
+        construtorPonto(x,y)
+        raio=raio
+        area=pi*raio^2
+        perimetro=2*pi*raio
+
+classe Poligono:
+    construtor(x,y):
+        num_pontos=tamanho(x)
+        vertices=[Ponto(x[i],y[i]) para i em range(num_pontos)]
+        arestas=[Linha([vertices[i].x,vertices[i+1].x],[vertices[i].y,vertices[i+1].y]) para i em range(npontos)]
+
+classe Triangulo(Poligono):
+    construtor(x,y):
+        construtorPol(x,y)
+        area=0.5*arestas[0].comprimento*arestas[1].comprimento
+
+classe Quadrado(Poligono):
+    construtor(x,y):
+        construtorPol(x,y)
+        area=arestas[0].comprimento*arestas[1].comprimento
+
+classe Cartesiano:
+    construtor():
+    num_fig=0
+
+    criar_ponto(x,y):
+        num_fig+=1
+        return Ponto(x,y)
+    
+    criar_linha(x,y):
+        num_fig+=1
+        return Linha(x,y)
+
+    criar_circulo(x,y,raio)
+        num_fig+=1
+        return Circulo(x,y,raio)
+    
+    criar_triangulo(x,y)
+        num_fig+=1
+        return Triangulo(x,y)
+    
+    criar_quadrado(x,y)
+        num_fig+=1
+        return Quadrado(x,y)
+    
